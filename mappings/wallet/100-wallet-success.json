@@ -1,0 +1,23 @@
+{
+  "priority": 100,
+  "request": {
+    "method": "POST",
+    "url": "/wallet/deposit",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.amount >= 100 && @.amount <= 10000)]"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "code": "SUCCESS",
+      "message": "Deposit is completed",
+	  "currency": "USD"
+    }
+  }
+}

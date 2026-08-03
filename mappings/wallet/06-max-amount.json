@@ -1,0 +1,19 @@
+{
+  "priority": 6,
+  "request": {
+    "method": "POST",
+    "url": "/wallet/deposit",
+    "headers": {
+      "X-Scenario": {
+        "equalTo": "max-amount"
+      }
+    }
+  },
+  "response": {
+    "status": 409,
+    "jsonBody": {
+      "code": "MAX_AMOUNT",
+      "message": "Maximum amount is 10000"
+    }
+  }
+}

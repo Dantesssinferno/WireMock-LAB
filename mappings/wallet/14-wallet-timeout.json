@@ -1,0 +1,28 @@
+{
+  "priority": 4,
+  "request": {
+    "method": "POST",
+    "url": "/wallet/deposit",
+
+    "headers": {
+      "X-Scenario": {
+        "equalTo": "timeout"
+      }
+    }
+
+  },
+
+  "response": {
+    "status": 504,
+    "fixedDelayMilliseconds": 15000,
+
+    "headers": {
+      "Content-Type": "application/json"
+    },
+
+    "jsonBody": {
+      "code": "TIMEOUT",
+      "message": "Wallet service timeout"
+    }
+  }
+}

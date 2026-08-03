@@ -1,0 +1,24 @@
+{
+  "priority": 10,
+  "request": {
+    "method": "POST",
+    "url": "/wallet/deposit",
+    "headers": {
+      "Authorization": {
+        "contains": "Bearer "
+      }
+    },
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.currency == 'BTC')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 400,
+    "jsonBody": {
+      "code": "UNSUPPORTED_CURRENCY",
+      "message": "Currency BTC is not supported"
+    }
+  }
+}

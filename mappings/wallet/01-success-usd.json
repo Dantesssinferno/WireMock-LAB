@@ -1,0 +1,37 @@
+{
+  "priority": 101,
+  "request": {
+    "method": "POST",
+    "url": "/wallet/deposit",
+    "headers": {
+      "Content-Type": {
+        "contains": "application/json"
+      },
+      "Authorization": {
+        "contains": "Bearer "
+      }
+    },
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.transactionId)]"
+      },
+      {
+        "matchesJsonPath": "$[?(@.userId)]"
+      },
+      {
+        "matchesJsonPath": "$[?(@.amount)]"
+      },
+      {
+        "matchesJsonPath": "$[?(@.currency == 'USD')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "code": "SUCCESS",
+      "message": "Deposit completed",
+      "currency": "USD"
+    }
+  }
+}

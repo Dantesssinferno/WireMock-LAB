@@ -1,0 +1,23 @@
+{
+  "priority": 6,
+  "request": {
+    "method": "POST",
+    "url": "/wallet/deposit",
+
+    "headers": {
+      "X-Scenario": {
+        "equalTo": "duplicate"
+      }
+    }
+
+  },
+
+  "response": {
+    "status": 409,
+
+    "jsonBody": {
+      "code": "DUPLICATE_TRANSACTION",
+      "message": "Transaction already exists"
+    }
+  }
+}

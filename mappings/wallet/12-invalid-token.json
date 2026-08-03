@@ -1,0 +1,23 @@
+{
+  "priority": 7,
+  "request": {
+    "method": "POST",
+    "url": "/wallet/deposit",
+
+    "headers": {
+      "X-Scenario": {
+        "equalTo": "invalid-token"
+      }
+    }
+
+  },
+
+  "response": {
+    "status": 401,
+
+    "jsonBody": {
+      "code": "INVALID_TOKEN",
+      "message": "Invalid access token"
+    }
+  }
+}

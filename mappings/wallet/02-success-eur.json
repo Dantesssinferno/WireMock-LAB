@@ -1,0 +1,23 @@
+{
+  "priority": 3,
+  "request": {
+    "method": "POST",
+    "url": "/wallet/deposit",
+	"bodyPatterns": [
+	  {
+		"matchesJsonPath": "$[?(@.currency == 'EUR')]"
+	  }
+	]
+},
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "code": "SUCCESS",
+      "message": "Deposit is completed",
+	  "currency": "EUR"
+    }
+  }
+}

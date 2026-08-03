@@ -1,0 +1,19 @@
+{
+  "priority": 5,
+  "request": {
+    "method": "POST",
+    "url": "/wallet/deposit",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.amount < 100)]"
+      }
+    ]
+  },
+  "response": {
+    "status": 400,
+    "jsonBody": {
+      "code": "MIN_AMOUNT",
+      "message": "Minimum amount is 100"
+    }
+  }
+}

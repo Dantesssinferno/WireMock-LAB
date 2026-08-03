@@ -1,0 +1,27 @@
+{
+  "priority": 5,
+  "request": {
+    "method": "POST",
+    "url": "/wallet/deposit",
+
+    "headers": {
+      "X-Scenario": {
+        "equalTo": "service-unavailable"
+      }
+    }
+
+  },
+
+  "response": {
+    "status": 503,
+
+    "headers": {
+      "Content-Type": "application/json"
+    },
+
+    "jsonBody": {
+      "code": "SERVICE_UNAVAILABLE",
+      "message": "Wallet service unavailable"
+    }
+  }
+}

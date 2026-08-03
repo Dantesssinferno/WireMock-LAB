@@ -1,0 +1,18 @@
+{
+  "priority": 8,
+  "request": {
+    "method": "POST",
+    "url": "/wallet/deposit",
+    "headers": {
+      "X-Scenario": {
+        "equalTo": "missing-token"
+      }
+    }
+  },
+  "response": {
+    "status": 401,
+    "jsonBody": {
+      "code": "UNAUTHORIZED"
+    }
+  }
+}
